@@ -1,9 +1,11 @@
-package sample.pre;
+package sample.pre.model;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
+import lombok.Builder;
 
 @JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
+@Builder
 public class UserDto {
 
 	private String userName;
@@ -14,16 +16,13 @@ public class UserDto {
 
 	private Boolean isKorean;
 
-	public UserDto() {
-		System.out.println("NO ARGS constructor called");
-	}
-
-	public UserDto(String userName, String phoneNumber, String mailAddress) {
+	protected UserDto(String userName, String phoneNumber, String mailAddress, Boolean isKorean) {
 		System.out.println("All ARGS constructor called");
 		System.out.println(" - Inside constructor... " + userName + " " + phoneNumber + " " + mailAddress);
 		this.userName = userName;
 		this.phoneNumber = phoneNumber;
 		this.mailAddress = mailAddress;
+		this.isKorean = isKorean;
 	}
 
 	public void setMailAddress(String mailAddress) {

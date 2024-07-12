@@ -1,4 +1,4 @@
-package sample.pre;
+package sample.pre.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import sample.pre.model.UserDto;
+import sample.pre.model.UserSearchQueryParam;
 
 
 /**
@@ -28,7 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController // NOTE: 그냥 Controller랑 뭐가 다른지?
 @Slf4j
 @RequestMapping("/api")
-public class Controller {
+public class ControllerEx01 {
 
 	@GetMapping("/add/{number1}/{number2}")
 	public int getWithPathVariable(
@@ -75,13 +77,13 @@ public class Controller {
 	 */
 	@PostMapping("/users")
 	public UserDto postMethod(@RequestBody final UserDto user) {
-		System.out.println(user);
+		log.info("users in post: {}", user);
 		return user;
 	}
 
 	@PutMapping("/users")
 	public UserDto putMethod(@RequestBody final UserDto user) {
-		log.info("user: {}", user);
+		log.info("users in put: {}", user);
 		return user;
 	}
 
