@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import sample.pre.model.UserDto;
+import sample.pre.model.UserDtoXXX;
 import sample.pre.model.UserSearchQueryParam;
 
 
@@ -76,13 +76,13 @@ public class ControllerEx01 {
 	 * Custom Object = application/json
 	 */
 	@PostMapping("/users")
-	public UserDto postMethod(@RequestBody final UserDto user) {
+	public UserDtoXXX postMethod(@RequestBody final UserDtoXXX user) {
 		log.info("users in post: {}", user);
 		return user;
 	}
 
 	@PutMapping("/users")
-	public UserDto putMethod(@RequestBody final UserDto user) {
+	public UserDtoXXX putMethod(@RequestBody final UserDtoXXX user) {
 		log.info("users in put: {}", user);
 		return user;
 	}

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import sample.pre.model.UserRegisterDto;
+import sample.pre.model.UserDto;
 
 @Slf4j
 @RestController
@@ -18,12 +18,11 @@ public class ControllerEx02 {
 
 	@PostMapping("/users")
 	public ResponseEntity<?> registerUser(
-		@RequestBody @Valid final UserRegisterDto userRegisterDto
+		@RequestBody @Valid final UserDto userDto
 	) {
-
-		log.info("userRegisterDto: {}", userRegisterDto);
-
+		log.info("userRegisterDto: {}", userDto);
 		final String message = "user created";
+
 		return ResponseEntity.status(HttpStatus.CREATED).body(message);
 	}
 }
