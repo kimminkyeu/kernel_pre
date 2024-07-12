@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.PastOrPresent;
 import jakarta.validation.constraints.Size;
 import java.time.LocalDate;
 import lombok.AccessLevel;
@@ -13,6 +12,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import sample.pre.validation.ValidBirthDate;
 import sample.pre.validation.ValidPhoneNumber;
 
 @Data
@@ -22,13 +22,16 @@ import sample.pre.validation.ValidPhoneNumber;
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class UserRegisterDto {
 
-	@Size(min = 4, max = 15) @NotBlank // TODO: Size가 이미 있는데 왜 필요한지 체크
+	@NotBlank // TODO: Size가 이미 있는데 왜 필요한지 체크
+	@Size(min = 4, max = 15)
 	private final String nickName;
 
-	@PastOrPresent // TODO: Date, LocalDate, LocateDateTime 알아 보기
-	private final LocalDate birthDate;
+	@ValidBirthDate // TODO: Date, LocalDate, LocateDateTime 알아 보기
+	private final String birthDate; // TODO: 이걸 LocalDate으로 받으면 포맷팅 Exception이 분리된다...
+	// NOTE: LocalDate으로 받고, 변환 이전에 String으로 검사하는게 좋을까...?
 
-	@Email @NotBlank
+	@NotBlank
+	@Email
 	private final String email;
 
 	@ValidPhoneNumber
