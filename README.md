@@ -84,13 +84,13 @@
         public enum ApiErrorCode {
         	/** Board */
         	INVALID_BOARD_CATEGORY 	( HttpStatus.BAD_REQUEST, "게시판 카테고리 오류" ),
-        	BOARD_INACCESSIBLE 		  ( HttpStatus.NOT_FOUND, "게시판 조회 불가" ),
+        	BOARD_INACCESSIBLE      ( HttpStatus.NOT_FOUND, "게시판 조회 불가" ),
         	/** Article */
-        	ARTICLE_NOT_FOUND 		  ( HttpStatus.NOT_FOUND, "게시글 조회 불가" ),
+        	ARTICLE_NOT_FOUND       ( HttpStatus.NOT_FOUND, "게시글 조회 불가" ),
         	/** Comment*/
-        	COMMENT_NOT_FOUND 		  ( HttpStatus.NOT_FOUND, "댓글 조회 불가" ),
+        	COMMENT_NOT_FOUND       ( HttpStatus.NOT_FOUND, "댓글 조회 불가" ),
         	/** Authorization */
-        	UNAUTHORIZED_VIEWER 	  ( HttpStatus.UNAUTHORIZED, "권한 없음" ),
+        	UNAUTHORIZED_VIEWER     ( HttpStatus.UNAUTHORIZED, "권한 없음" ),
         	// ...
         }
         ```
