@@ -1,0 +1,26 @@
+services:
+  mysql:
+    image: mysql
+    restart: always
+    command:
+      - --lower_case_table_names=2
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    container_name: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_DATABASE=mydb
+      - MYSQL_ROOT_PASSWORD=root1234!!
+      - TZ=Asia/Seoul
+
+    # https://docs.docker.com/storage/volumes/
+    # https://medium.com/@kale.miller96/how-to-mount-your-current-working-directory-to-your-docker-container-in-windows-74e47fa104d7
+    # https://www.toolsqa.com/docker/docker-volume/
+    # TODO: 프로젝트 경로에 볼륨을 마운트하는 방법은?
+    volumes:
+      - mysql-data:/home/kyeu/goinfree/kernel360/pre/mysql
+
+# 이건 도커에서 볼륨 생성.
+volumes:
+  mysql-data:
