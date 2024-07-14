@@ -26,16 +26,16 @@
             - 문의 사항에 대한 응답
 - **엔티티 정의**
     
-    강의에선 `FK`를 사용하지 않았으나, 학습을 위해 엔티티 간의 `FK` 를 설정하였음
+    강의에선 `FK`를 사용하지 않았으나, 학습을 위해 엔티티 간의 `FK` 를 설정하였다.
   
-    ![*다이어그램에서 `ZeroOrMany`로 되어 있는 화살표는 `OneOrMany`로 수정 필요*](https://github.com/user-attachments/assets/95a91f6d-613a-40c7-adee-c09789ae8c0b)
+    ![*⚠️ 다이어그램에서 `ZeroOrMany`로 되어 있는 화살표는 `OneOrMany`로 수정 필요*](https://github.com/user-attachments/assets/95a91f6d-613a-40c7-adee-c09789ae8c0b)
 
     *다이어그램에서 `ZeroOrMany`로 되어 있는 화살표는 `OneOrMany`로 수정 필요*
     
-    상단 ERD를 바탕으로 ddl 작성
+    상단 ERD를 바탕으로 ddl을 작성한 결과입니다.
     
     ```sql
-    // schema.sql
+    # schema.sql
     CREATE DATABASE IF NOT EXISTS `BOARD_00`;
     USE `BOARD_00`;
     
