@@ -74,6 +74,7 @@
 - **Controller Service Repository 분리하기**
     
     ![Untitled 2](https://github.com/user-attachments/assets/5b6836a6-6740-4161-b34d-4465610b68de)
+  기존 mySQL 프로세스가 3306 포트를 사용하고 있어서 임시로 3307로 host ip를 설정하였습니다.
     
 - **API 예외 코드 정의**
     - 모든 API 예외는 `ApiErrorCode` 로 대분류.
