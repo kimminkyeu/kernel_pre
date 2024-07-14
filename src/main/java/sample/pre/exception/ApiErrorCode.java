@@ -34,7 +34,7 @@ public enum ApiErrorCode {
 	private final HttpStatus status;
 	private final String errorSubject;
 
-	private ApiErrorCode(HttpStatus status, String errorSubject) {
+	ApiErrorCode(HttpStatus status, String errorSubject) {
 		this.status = status;
 		this.errorSubject = errorSubject;
 	}

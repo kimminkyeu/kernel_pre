@@ -15,7 +15,7 @@ import org.springframework.http.ProblemDetail;
 @Getter
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class ApiErrorResponse extends ProblemDetail {
-	private List<String> details = null;
+	private final List<String> details;
 	private final String reason;
 
 	@Builder

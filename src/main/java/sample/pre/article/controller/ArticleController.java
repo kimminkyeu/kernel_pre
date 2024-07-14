@@ -46,7 +46,7 @@ public class ArticleController {
 
 	@GetMapping("")
 	public ResponseEntity<?> getArticlesWithPagination(
-		@PageableDefault(page = 0, size = 10) @Valid Pageable pageable
+		@PageableDefault() @Valid Pageable pageable
 	) {
 		return ResponseEntity.ok( articleService.all(pageable) );
 	}
